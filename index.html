@@ -1,0 +1,1811 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tỉnh Vĩnh Long – Lịch Sử & Văn Hoá</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #c8922a;
+  --gold-light: #e8b84b;
+  --deep: #1a1008;
+  --earth: #3d2b0f;
+  --green: #2d5a27;
+  --green-light: #4a8c3f;
+  --water: #1b4f72;
+  --cream: #faf6ee;
+  --sand: #e8dfc8;
+  --text: #2a1f0a;
+  --muted: #7a6545;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute; inset: 0;
+  background: linear-gradient(160deg, #0d2b1a 0%, #1a3a10 30%, #2d5a27 60%, #1b4f72 100%);
+}
+
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Mekong_River_Delta_Vietnam.jpg/1280px-Mekong_River_Delta_Vietnam.jpg') center/cover no-repeat;
+  opacity: 0.25;
+}
+
+.hero-pattern {
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle at 20% 50%, rgba(200,146,42,0.15) 0%, transparent 60%),
+    radial-gradient(circle at 80% 20%, rgba(74,140,63,0.2) 0%, transparent 50%);
+}
+
+.hero-content {
+  position: relative; z-index: 2;
+  padding: 2rem;
+  animation: fadeUp 1.2s ease both;
+}
+
+.hero-badge {
+  display: inline-block;
+  border: 1px solid rgba(200,146,42,0.6);
+  color: var(--gold-light);
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  padding: 0.4rem 1.2rem;
+  margin-bottom: 1.5rem;
+  animation: fadeUp 1s 0.2s ease both;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  color: #fff;
+  line-height: 1.1;
+  text-shadow: 0 4px 30px rgba(0,0,0,0.5);
+  animation: fadeUp 1s 0.4s ease both;
+}
+
+.hero h1 span { color: var(--gold-light); font-style: italic; }
+
+.hero-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  color: rgba(255,255,255,0.8);
+  margin-top: 1rem;
+  font-weight: 300;
+  animation: fadeUp 1s 0.6s ease both;
+}
+
+.hero-stats {
+  display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;
+  margin-top: 2.5rem;
+  animation: fadeUp 1s 0.8s ease both;
+}
+
+.hero-stat {
+  text-align: center;
+  border: 1px solid rgba(200,146,42,0.3);
+  padding: 0.8rem 1.4rem;
+  background: rgba(0,0,0,0.25);
+  backdrop-filter: blur(8px);
+}
+
+.hero-stat .num {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: var(--gold-light);
+  display: block;
+}
+
+.hero-stat .lbl {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+}
+
+.scroll-hint {
+  position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+  animation: bounce 2s infinite;
+  color: rgba(255,255,255,0.5);
+  font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+}
+
+.scroll-hint::after {
+  content: '';
+  display: block; width: 1px; height: 40px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+}
+
+/* ===== NAV TABS ===== */
+.nav-sticky {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--deep);
+  border-bottom: 1px solid rgba(200,146,42,0.3);
+  overflow-x: auto;
+}
+
+.nav-inner {
+  display: flex; width: max-content; min-width: 100%;
+}
+
+.nav-tab {
+  padding: 1rem 1.4rem;
+  color: rgba(255,255,255,0.55);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none; background: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s;
+  white-space: nowrap;
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.nav-tab:hover { color: var(--gold-light); }
+.nav-tab.active {
+  color: var(--gold-light);
+  border-bottom-color: var(--gold);
+}
+
+/* ===== SECTIONS ===== */
+.section { display: none; }
+.section.active { display: block; }
+
+/* ===== COMMON BLOCKS ===== */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+.section-header {
+  text-align: center;
+  padding: 4rem 1.5rem 2.5rem;
+}
+
+.section-eyebrow {
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.8rem;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  color: var(--earth);
+  line-height: 1.2;
+}
+
+.section-title em { color: var(--green); font-style: italic; }
+
+.section-desc {
+  max-width: 680px; margin: 1rem auto 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+/* ===== INFO CARD ===== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 0 1.5rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background: #fff;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+}
+
+.card-img {
+  width: 100%; height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-body { padding: 1.4rem; }
+
+.card-tag {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  color: var(--earth);
+  margin-bottom: 0.6rem;
+}
+
+.card p {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ===== TIMELINE ===== */
+.timeline { padding: 0 1.5rem 4rem; max-width: 900px; margin: 0 auto; }
+
+.tl-item {
+  display: flex; gap: 2rem; margin-bottom: 2.5rem;
+  opacity: 0; animation: fadeUp 0.6s ease forwards;
+}
+
+.tl-item:nth-child(1) { animation-delay: 0.1s; }
+.tl-item:nth-child(2) { animation-delay: 0.2s; }
+.tl-item:nth-child(3) { animation-delay: 0.3s; }
+.tl-item:nth-child(4) { animation-delay: 0.4s; }
+.tl-item:nth-child(5) { animation-delay: 0.5s; }
+.tl-item:nth-child(6) { animation-delay: 0.6s; }
+.tl-item:nth-child(7) { animation-delay: 0.7s; }
+
+.tl-year {
+  min-width: 90px;
+  text-align: right;
+  padding-top: 0.1rem;
+}
+
+.tl-year span {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.tl-line {
+  display: flex; flex-direction: column; align-items: center;
+  min-width: 24px;
+}
+
+.tl-dot {
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 2px solid var(--cream);
+  box-shadow: 0 0 0 2px var(--gold);
+  flex-shrink: 0;
+}
+
+.tl-bar {
+  flex: 1; width: 2px;
+  background: linear-gradient(to bottom, var(--gold), rgba(200,146,42,0.1));
+  margin-top: 4px;
+}
+
+.tl-content {
+  flex: 1; padding-bottom: 1rem;
+}
+
+.tl-content h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--earth);
+  margin-bottom: 0.4rem;
+}
+
+.tl-content p {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ===== HERO-REGION FEATURE ===== */
+.region-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0;
+  margin: 0 0 4rem;
+}
+
+@media (max-width: 768px) {
+  .region-grid { grid-template-columns: 1fr; }
+}
+
+.region-panel {
+  position: relative;
+  height: 420px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.region-panel img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.region-panel:hover img { transform: scale(1.05); }
+
+.region-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 2rem;
+  color: #fff;
+}
+
+.region-tag {
+  font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--gold-light); margin-bottom: 0.4rem;
+}
+
+.region-overlay h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  margin-bottom: 0.5rem;
+}
+
+.region-overlay p {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.6;
+}
+
+/* ===== FACTS BAR ===== */
+.facts-bar {
+  background: var(--earth);
+  padding: 3rem 1.5rem;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 3rem;
+}
+
+.fact-item { text-align: center; }
+
+.fact-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  color: var(--gold-light);
+  display: block;
+}
+
+.fact-lbl {
+  font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: rgba(255,255,255,0.55); margin-top: 0.3rem;
+}
+
+/* ===== HIGHLIGHT STRIP ===== */
+.highlight-strip {
+  background: var(--green);
+  color: #fff;
+  padding: 1.2rem 1.5rem;
+  text-align: center;
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+}
+
+.highlight-strip strong { color: var(--gold-light); }
+
+/* ===== CULTURE MOSAIC ===== */
+.mosaic {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 200px);
+  gap: 4px;
+  margin: 0 0 4rem;
+}
+
+@media (max-width: 768px) {
+  .mosaic { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(6, 180px); }
+}
+
+.mosaic-item {
+  position: relative; overflow: hidden; cursor: pointer;
+}
+
+.mosaic-item img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.mosaic-item:hover img { transform: scale(1.08); }
+
+.mosaic-item.big {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.mosaic-label {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.7));
+  color: #fff;
+  padding: 1.5rem 1rem 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transform: translateY(100%);
+  transition: transform 0.3s;
+}
+
+.mosaic-item:hover .mosaic-label { transform: translateY(0); }
+
+/* ===== FOOD GRID ===== */
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  padding: 0 1.5rem 4rem;
+  max-width: 1200px; margin: 0 auto;
+}
+
+.food-card {
+  background: #fff;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+  transition: transform 0.3s;
+}
+
+.food-card:hover { transform: translateY(-3px); }
+
+.food-card img {
+  width: 100%; height: 180px; object-fit: cover;
+}
+
+.food-card-body { padding: 1.2rem; }
+
+.food-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--earth);
+  margin-bottom: 0.4rem;
+}
+
+.food-card p {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.food-origin {
+  display: inline-block;
+  font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase;
+  background: var(--sand);
+  color: var(--gold);
+  padding: 0.2rem 0.6rem;
+  margin-bottom: 0.6rem;
+}
+
+/* ===== TOURISM SPOTS ===== */
+.spots-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  max-width: 1200px; margin: 0 auto 4rem;
+  padding: 0 1.5rem;
+}
+
+@media (max-width: 600px) { .spots-layout { grid-template-columns: 1fr; } }
+
+.spot {
+  position: relative; overflow: hidden;
+  height: 280px; cursor: pointer;
+}
+
+.spot img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.spot:hover img { transform: scale(1.07); }
+
+.spot-info {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 55%);
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 1.5rem;
+  color: #fff;
+}
+
+.spot-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.spot-info p {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.5;
+}
+
+.spot-icon {
+  font-size: 1.2rem; margin-bottom: 0.3rem;
+}
+
+.spot.tall { height: 420px; grid-row: span 2; }
+
+/* ===== ADMIN SECTION ===== */
+.admin-table {
+  width: 100%; border-collapse: collapse;
+  margin: 0 auto 3rem;
+  max-width: 900px;
+  font-size: 0.85rem;
+}
+
+.admin-table th {
+  background: var(--earth);
+  color: var(--gold-light);
+  padding: 0.8rem 1rem;
+  text-align: left;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.admin-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--sand);
+  color: var(--text);
+}
+
+.admin-table tr:hover td { background: rgba(200,146,42,0.05); }
+
+.admin-table-wrap {
+  padding: 0 1.5rem 3rem;
+  overflow-x: auto;
+}
+
+/* ===== CHATBOX ===== */
+#chatbox-fab {
+  position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
+  width: 58px; height: 58px;
+  background: var(--green);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; border: none;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  transition: transform 0.3s, background 0.3s;
+}
+
+#chatbox-fab:hover { transform: scale(1.1); background: var(--green-light); }
+
+#chatbox-fab svg { width: 26px; height: 26px; fill: #fff; }
+
+#chatbox-panel {
+  position: fixed; bottom: 6rem; right: 2rem; z-index: 998;
+  width: 360px; max-width: calc(100vw - 2rem);
+  background: #fff;
+  border-radius: 2px;
+  box-shadow: 0 10px 60px rgba(0,0,0,0.2);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  height: 500px;
+}
+
+#chatbox-panel.open { display: flex; }
+
+.chat-header {
+  background: var(--earth);
+  color: #fff;
+  padding: 1rem 1.2rem;
+  display: flex; align-items: center; gap: 0.75rem;
+}
+
+.chat-avatar {
+  width: 36px; height: 36px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.chat-header-info h4 {
+  font-size: 0.9rem; font-weight: 600;
+}
+
+.chat-header-info p {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.6);
+}
+
+#chat-messages {
+  flex: 1; overflow-y: auto;
+  padding: 1rem;
+  display: flex; flex-direction: column; gap: 0.8rem;
+  background: #f7f4ef;
+}
+
+.msg {
+  max-width: 85%;
+  padding: 0.7rem 1rem;
+  border-radius: 2px;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  animation: fadeUp 0.3s ease;
+}
+
+.msg.bot {
+  background: #fff;
+  border-left: 3px solid var(--gold);
+  color: var(--text);
+  align-self: flex-start;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.msg.user {
+  background: var(--green);
+  color: #fff;
+  align-self: flex-end;
+}
+
+.chat-input-row {
+  display: flex;
+  border-top: 1px solid var(--sand);
+}
+
+#chat-input {
+  flex: 1; border: none; outline: none;
+  padding: 0.85rem 1rem;
+  font-size: 0.85rem;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  background: #fff;
+}
+
+#chat-send {
+  background: var(--green);
+  color: #fff;
+  border: none; cursor: pointer;
+  padding: 0 1.2rem;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+#chat-send:hover { background: var(--green-light); }
+
+.typing-dots { display: flex; gap: 4px; align-items: center; padding: 0.2rem 0; }
+.typing-dots span {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--muted); display: block;
+  animation: dot-bounce 1.2s infinite;
+}
+.typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+.typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+/* ===== DECORATIVE DIVIDER ===== */
+.divider {
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--gold);
+  letter-spacing: 0.5em;
+  font-size: 0.8rem;
+}
+
+/* ===== INFO BOX ===== */
+.info-box {
+  background: linear-gradient(135deg, var(--earth) 0%, #5a3d1a 100%);
+  color: #fff;
+  padding: 3rem 2rem;
+  margin: 0 1.5rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.info-box::before {
+  content: '';
+  position: absolute; top: -40px; right: -40px;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  background: rgba(200,146,42,0.1);
+}
+
+.info-box h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: var(--gold-light);
+  margin-bottom: 1rem;
+}
+
+.info-box p {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.85);
+  max-width: 760px;
+}
+
+/* ===== QUOTE ===== */
+.quote-block {
+  border-left: 4px solid var(--gold);
+  padding: 1.5rem 2rem;
+  margin: 2rem 1.5rem;
+  background: rgba(200,146,42,0.05);
+  max-width: 700px;
+}
+
+.quote-block blockquote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--earth);
+  line-height: 1.7;
+}
+
+.quote-block cite {
+  display: block; margin-top: 0.7rem;
+  font-size: 0.75rem; letter-spacing: 0.1em;
+  color: var(--muted); text-transform: uppercase;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--deep);
+  color: rgba(255,255,255,0.5);
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  font-size: 0.78rem;
+  line-height: 1.8;
+}
+
+footer strong { color: var(--gold-light); }
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-8px); }
+}
+
+@keyframes dot-bounce {
+  0%, 80%, 100% { transform: scale(0.8); opacity: 0.4; }
+  40% { transform: scale(1.2); opacity: 1; }
+}
+
+/* Quick facts sidebar */
+.two-col {
+  display: grid; grid-template-columns: 1fr 360px; gap: 2.5rem;
+  max-width: 1100px; margin: 0 auto 4rem; padding: 0 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 860px) { .two-col { grid-template-columns: 1fr; } }
+
+.prose h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem; color: var(--earth);
+  margin: 1.5rem 0 0.6rem;
+}
+
+.prose p { font-size: 0.9rem; color: var(--muted); line-height: 1.8; margin-bottom: 0.8rem; }
+
+.sidebar-box {
+  background: #fff;
+  border-top: 3px solid var(--gold);
+  padding: 1.5rem;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+}
+
+.sidebar-box h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; color: var(--earth);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--sand);
+}
+
+.sidebar-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--sand);
+  font-size: 0.82rem;
+}
+
+.sidebar-row:last-child { border-bottom: none; }
+.sidebar-key { color: var(--muted); }
+.sidebar-val { font-weight: 600; color: var(--earth); text-align: right; max-width: 55%; }
+
+/* Responsive */
+@media (max-width: 600px) {
+  .hero-stats { gap: 1rem; }
+  .hero-stat { padding: 0.6rem 1rem; }
+}
+
+/* Legend badge */
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 20px;
+  margin-right: 0.4rem;
+}
+
+.badge-vl { background: rgba(45,90,39,0.15); color: var(--green); }
+.badge-bt { background: rgba(200,146,42,0.15); color: #8a5e0f; }
+.badge-tv { background: rgba(27,79,114,0.15); color: var(--water); }
+
+/* Img fallback */
+img { background: var(--sand); }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-content">
+    <div class="hero-badge">✦ Đồng Bằng Sông Cửu Long ✦</div>
+    <h1>Tỉnh <span>Vĩnh Long</span><br>Mới</h1>
+    <p class="hero-sub">Lịch Sử · Văn Hoá · Du Lịch · Con Người<br>Sau sáp nhập Bến Tre – Trà Vinh – Vĩnh Long (01/07/2025)</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="num">6.296 km²</span>
+        <span class="lbl">Diện tích</span>
+      </div>
+      <div class="hero-stat">
+        <span class="num">4,26 triệu</span>
+        <span class="lbl">Dân số</span>
+      </div>
+      <div class="hero-stat">
+        <span class="num">124</span>
+        <span class="lbl">Xã / Phường</span>
+      </div>
+      <div class="hero-stat">
+        <span class="num">~300 năm</span>
+        <span class="lbl">Lịch sử khai phá</span>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">Khám phá</div>
+</section>
+
+<!-- TABS NAV -->
+<nav class="nav-sticky" id="mainNav">
+  <div class="nav-inner">
+    <button class="nav-tab active" onclick="showTab('tab-tong-quan', this)">🗺️ Tổng Quan</button>
+    <button class="nav-tab" onclick="showTab('tab-lich-su', this)">📜 Lịch Sử</button>
+    <button class="nav-tab" onclick="showTab('tab-van-hoa', this)">🎭 Văn Hoá</button>
+    <button class="nav-tab" onclick="showTab('tab-du-lich', this)">🌿 Du Lịch</button>
+    <button class="nav-tab" onclick="showTab('tab-am-thuc', this)">🍜 Ẩm Thực</button>
+    <button class="nav-tab" onclick="showTab('tab-hanh-chinh', this)">🏛️ Hành Chính</button>
+    <button class="nav-tab" onclick="showTab('tab-kinh-te', this)">📈 Kinh Tế</button>
+  </div>
+</nav>
+
+<!-- ============================== TAB 1: TỔNG QUAN ============================== -->
+<section class="section active" id="tab-tong-quan">
+  <div class="section-header">
+    <p class="section-eyebrow">Giới Thiệu Chung</p>
+    <h2 class="section-title">Ba Tỉnh – <em>Một Vùng Đất</em></h2>
+    <p class="section-desc">Từ ngày 01/07/2025, theo Nghị quyết 202/2025/QH15, tỉnh Bến Tre, Trà Vinh và Vĩnh Long (cũ) hợp nhất thành tỉnh Vĩnh Long mới – một cực tăng trưởng chiến lược ở trung tâm Đồng bằng sông Cửu Long.</p>
+  </div>
+
+  <!-- 3-panel region showcase -->
+  <div class="region-grid">
+    <div class="region-panel">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Vietnam_Mekong_river_delta.jpg/800px-Vietnam_Mekong_river_delta.jpg"
+           alt="Vĩnh Long – Miệt Vườn Sông Nước" loading="lazy"
+           onerror="this.src='https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800'">
+      <div class="region-overlay">
+        <span class="region-tag"><span class="badge badge-vl">Vĩnh Long (cũ)</span></span>
+        <h2>Xứ Sở Miệt Vườn</h2>
+        <p>Vùng đất trù phú giữa hai nhánh sông Tiền – sông Hậu, nổi danh với truyền thống hiếu học và cù lao An Bình.</p>
+      </div>
+    </div>
+    <div class="region-panel">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Ben_Tre_province.jpg/800px-Ben_Tre_province.jpg"
+           alt="Bến Tre – Xứ Dừa" loading="lazy"
+           onerror="this.src='https://images.unsplash.com/photo-1599707367072-cd6ada2bc375?w=800'">
+      <div class="region-overlay">
+        <span class="region-tag"><span class="badge badge-bt">Bến Tre (cũ)</span></span>
+        <h2>Quê Hương Xứ Dừa</h2>
+        <p>Thủ phủ dừa của miền Tây, mảnh đất anh hùng "Đồng Khởi" với những cù lao xanh mát giữa sông Tiền.</p>
+      </div>
+    </div>
+    <div class="region-panel">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Khmer_pagoda_Tra_Vinh.jpg/800px-Khmer_pagoda_Tra_Vinh.jpg"
+           alt="Trà Vinh – Văn Hoá Khmer" loading="lazy"
+           onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800'">
+      <div class="region-overlay">
+        <span class="region-tag"><span class="badge badge-tv">Trà Vinh (cũ)</span></span>
+        <h2>Miền Văn Hoá Khmer</h2>
+        <p>Trung tâm văn hóa Khmer Nam Bộ với hàng trăm ngôi chùa tháp, lễ hội truyền thống và cộng đồng dân tộc đặc sắc.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Facts bar -->
+  <div class="facts-bar">
+    <div class="fact-item">
+      <span class="fact-num">6.296,2</span>
+      <span class="fact-lbl">km² diện tích</span>
+    </div>
+    <div class="fact-item">
+      <span class="fact-num">4.257.581</span>
+      <span class="fact-lbl">Dân số (2025)</span>
+    </div>
+    <div class="fact-item">
+      <span class="fact-num">105 xã + 19 phường</span>
+      <span class="fact-lbl">124 đơn vị hành chính</span>
+    </div>
+    <div class="fact-item">
+      <span class="fact-num">TP. Vĩnh Long</span>
+      <span class="fact-lbl">Trung tâm hành chính</span>
+    </div>
+    <div class="fact-item">
+      <span class="fact-num">Biển Đông</span>
+      <span class="fact-lbl">Tiếp giáp (phía đông)</span>
+    </div>
+  </div>
+
+  <div class="section-header" style="padding-top:3rem;">
+    <p class="section-eyebrow">Vị Trí Địa Lý</p>
+    <h2 class="section-title">Trái Tim <em>Đồng Bằng</em></h2>
+  </div>
+
+  <div class="two-col">
+    <div class="prose">
+      <h3>📍 Vị Trí Địa Lý</h3>
+      <p>Tỉnh Vĩnh Long mới (sau sáp nhập) nằm ở trung tâm Đồng bằng sông Cửu Long, tiếp giáp tỉnh Đồng Tháp, thành phố Cần Thơ và mở ra Biển Đông. Hệ thống sông ngòi chằng chịt, với hai nhánh chính sông Tiền và sông Hậu cùng hàng nghìn km kênh rạch tạo nên cảnh quan đặc trưng vùng sông nước Nam Bộ.</p>
+
+      <h3>🌿 Điều Kiện Tự Nhiên</h3>
+      <p>Khí hậu nhiệt đới gió mùa, chia hai mùa rõ rệt: mùa mưa (tháng 5–11) và mùa khô (tháng 12–4). Nhiệt độ trung bình 26–28°C, lượng mưa 1.400–2.000mm/năm. Đất phù sa màu mỡ thuận lợi cho trồng lúa, cây ăn trái và nuôi trồng thủy sản.</p>
+
+      <h3>👨‍👩‍👧 Dân Cư & Cộng Đồng</h3>
+      <p>Vĩnh Long mới là nơi hội tụ nhiều dân tộc: người Kinh (chiếm đa số), người Khmer (~30% ở khu vực Trà Vinh cũ), người Hoa và các dân tộc khác. Sự đa dạng này tạo nên kho tàng văn hóa phong phú, từ đờn ca tài tử Nam Bộ đến các lễ hội Khmer truyền thống.</p>
+
+      <h3>🚗 Giao Thông Kết Nối</h3>
+      <p>Cách TP.HCM khoảng 100km về phía tây nam, cách Cần Thơ 30km. Hệ thống giao thông đang được đầu tư mạnh với cao tốc, quốc lộ và nhiều cầu lớn vượt sông, kết nối thuận lợi với các tỉnh thành trong vùng.</p>
+    </div>
+
+    <div>
+      <div class="sidebar-box">
+        <h4>📊 Thông Số Cơ Bản</h4>
+        <div class="sidebar-row">
+          <span class="sidebar-key">Tên chính thức</span>
+          <span class="sidebar-val">Tỉnh Vĩnh Long</span>
+        </div>
+        <div class="sidebar-row">
+          <span class="sidebar-key">Ngày sáp nhập</span>
+          <span class="sidebar-val">01/07/2025</span>
+        </div>
+        <div class="sidebar-row">
+          <span class="sidebar-key">Căn cứ pháp lý</span>
+          <span class="sidebar-val">NQ 202/2025/QH15 & NQ 1687/NQ-UBTVQH15</span>
+        </div>
+        <div class="sidebar-row">
+          <span class="sidebar-key">Diện tích</span>
+          <span class="sidebar-val">6.296,2 km²</span>
+        </div>
+        <div class="sidebar-row">
+          <span class="sidebar-key">Dân số</span>
+          <span class="sidebar-val">~4,26 triệu người</span>
+        </div>
+        <div class="sidebar-row">
+          <span class="sidebar-key">ĐV hành chính cấp xã</span>
+          <span class="sidebar-val">124 (105 xã + 19 phường)</span>
+        </div>
+        <div class="sidebar-row">
+          <span class="sidebar-key">Trung tâm tỉnh</span>
+          <span class="sidebar-val">TP. Vĩnh Long</span>
+        </div>
+        <div class="sidebar-row">
+          <span class="sidebar-key">Tiếp giáp</span>
+          <span class="sidebar-val">Đồng Tháp, Cần Thơ, Biển Đông</span>
+        </div>
+        <div class="sidebar-row">
+          <span class="sidebar-key">Mã bưu chính</span>
+          <span class="sidebar-val">85xxx / 86xxx / 87xxx</span>
+        </div>
+      </div>
+
+      <div class="sidebar-box" style="margin-top:1rem;">
+        <h4>🏞️ Tài Nguyên Nổi Bật</h4>
+        <div class="sidebar-row">
+          <span class="sidebar-key">Cây chủ lực</span>
+          <span class="sidebar-val">Dừa, lúa, cây ăn trái</span>
+        </div>
+        <div class="sidebar-row">
+          <span class="sidebar-key">Thủy sản</span>
+          <span class="sidebar-val">Tôm, cá, nghêu</span>
+        </div>
+        <div class="sidebar-row">
+          <span class="sidebar-key">Năng lượng</span>
+          <span class="sidebar-val">Điện gió, điện mặt trời, nhiệt điện</span>
+        </div>
+        <div class="sidebar-row">
+          <span class="sidebar-key">Di tích quốc gia</span>
+          <span class="sidebar-val">Hàng chục di tích</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== TAB 2: LỊCH SỬ ============================== -->
+<section class="section" id="tab-lich-su">
+  <div class="section-header">
+    <p class="section-eyebrow">Dòng Thời Gian</p>
+    <h2 class="section-title">Hành Trình <em>Lịch Sử</em></h2>
+    <p class="section-desc">Gần 300 năm khai phá, gìn giữ và phát triển – đất Vĩnh Long ghi dấu ấn qua từng trang sử hào hùng của dân tộc.</p>
+  </div>
+
+  <div class="info-box">
+    <h3>Nền Văn Minh Cổ Đại</h3>
+    <p>Các di tích khảo cổ tại Vĩnh Long như ao hồ (xã Vĩnh Xuân – Trà Ôn), thành cổ (xã Trung Hiệp và Trung Hiếu, huyện Vũng Liêm) là bằng chứng về một nền văn hóa cổ đã từng hưng thịnh trên miền đất này từ những thế kỷ đầu Công nguyên. Sau lần "biển tiến" vào đầu thế kỷ VII, vùng đất bị bỏ hoang nhiều thế kỷ trước khi các lưu dân tới khai phá từ thế kỷ XVII.</p>
+  </div>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-year"><span>Thế kỷ XVII</span></div>
+      <div class="tl-line"><div class="tl-dot"></div><div class="tl-bar"></div></div>
+      <div class="tl-content">
+        <h3>Khai Phá Vùng Đất Mới</h3>
+        <p>Ba tộc người Việt, Khmer và Hoa bắt đầu định cư và khai phá vùng đất phù sa màu mỡ. Các làng mạc đầu tiên hình thành dọc theo sông Tiền và sông Hậu.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year"><span>1732</span></div>
+      <div class="tl-line"><div class="tl-dot"></div><div class="tl-bar"></div></div>
+      <div class="tl-content">
+        <h3>Hình Thành Địa Danh Vĩnh Long</h3>
+        <p>Vùng đất Vĩnh Long được đặt tên chính thức trong hệ thống hành chính Đàng Trong. Đây là giai đoạn phát triển mạnh mẽ của nền nông nghiệp và thương mại sông nước.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year"><span>1832</span></div>
+      <div class="tl-line"><div class="tl-dot"></div><div class="tl-bar"></div></div>
+      <div class="tl-content">
+        <h3>Thành Lập Tỉnh Vĩnh Long</h3>
+        <p>Vua Minh Mạng cải cách hành chính, thành lập tỉnh Vĩnh Long là một trong "Lục tỉnh Nam Kỳ". Văn Thánh Miếu được xây dựng làm biểu tượng của truyền thống hiếu học.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year"><span>1858–1945</span></div>
+      <div class="tl-line"><div class="tl-dot"></div><div class="tl-bar"></div></div>
+      <div class="tl-content">
+        <h3>Thời Kỳ Kháng Chiến Pháp</h3>
+        <p>Vĩnh Long, Bến Tre và Trà Vinh là căn cứ địa kháng Pháp với nhiều nhà yêu nước như Phan Thanh Giản, Nguyễn Đình Chiểu. Bến Tre nổi tiếng với phong trào Đồng Khởi (1960).</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year"><span>1945–1975</span></div>
+      <div class="tl-line"><div class="tl-dot"></div><div class="tl-bar"></div></div>
+      <div class="tl-content">
+        <h3>Kháng Chiến Chống Mỹ & Giải Phóng</h3>
+        <p>Phong trào Đồng Khởi Bến Tre năm 1960 lan rộng toàn miền Nam. Vùng đất là hậu phương vững chắc cho cách mạng. Ngày 30/4/1975, miền Nam hoàn toàn giải phóng.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year"><span>1991</span></div>
+      <div class="tl-line"><div class="tl-dot"></div><div class="tl-bar"></div></div>
+      <div class="tl-content">
+        <h3>Tách Tỉnh – Tái Lập Đơn Vị</h3>
+        <p>Kỳ họp Quốc hội thứ 10, khóa VIII (26/12/1991) tách tỉnh Cửu Long thành hai tỉnh Vĩnh Long và Trà Vinh. Ba tỉnh Vĩnh Long, Bến Tre, Trà Vinh hoạt động độc lập suốt hơn 30 năm.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year"><span>01/07/2025</span></div>
+      <div class="tl-line"><div class="tl-dot"></div></div>
+      <div class="tl-content">
+        <h3>🎉 Sáp Nhập – Tỉnh Vĩnh Long Mới Ra Đời</h3>
+        <p>Theo Nghị quyết 202/2025/QH15, ba tỉnh Bến Tre, Trà Vinh và Vĩnh Long hợp nhất thành tỉnh Vĩnh Long mới. Trung tâm hành chính đặt tại TP. Vĩnh Long. Đây là bước ngoặt lịch sử mở ra kỷ nguyên phát triển mới cho vùng đất trung tâm ĐBSCL.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-strip">
+    🏆 Danh nhân tiêu biểu: <strong>Phan Thanh Giản</strong> (nhà yêu nước) · <strong>Nguyễn Đình Chiểu</strong> (nhà thơ yêu nước) · <strong>Nguyễn Thị Định</strong> (nữ tướng Đồng Khởi Bến Tre) · <strong>Út Trà Ôn</strong> (nghệ sĩ cải lương)
+  </div>
+
+  <div class="section-header" style="padding-top:3rem;">
+    <p class="section-eyebrow">Di Tích Lịch Sử</p>
+    <h2 class="section-title">Những <em>Công Trình</em> Lịch Đại</h2>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <img class="card-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Van_Thanh_Mieu_Vinh_Long.jpg/640px-Van_Thanh_Mieu_Vinh_Long.jpg"
+           alt="Văn Thánh Miếu Vĩnh Long" loading="lazy"
+           onerror="this.src='https://images.unsplash.com/photo-1557750255-c76072a7aad1?w=600&h=350&fit=crop'">
+      <div class="card-body">
+        <span class="card-tag"><span class="badge badge-vl">Vĩnh Long cũ</span> Di tích Quốc gia</span>
+        <h3>Văn Thánh Miếu Vĩnh Long</h3>
+        <p>Được công nhận Di tích lịch sử – văn hóa năm 1991. Xây dựng thời Nguyễn, là văn miếu thứ 2 ở Nam Bộ, thờ Đức Khổng Tử và các vị đại thần. Biểu tượng truyền thống hiếu học đất Vĩnh Long.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Chua_Tien_Chau_Vinh_Long.jpg/640px-Chua_Tien_Chau_Vinh_Long.jpg"
+           alt="Chùa Tiên Châu" loading="lazy"
+           onerror="this.src='https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=600&h=350&fit=crop'">
+      <div class="card-body">
+        <span class="card-tag"><span class="badge badge-vl">Vĩnh Long cũ</span> Di tích Quốc gia</span>
+        <h3>Chùa Tiên Châu (Tiên Châu Tự)</h3>
+        <p>Ngôi chùa cổ nhất Vĩnh Long, xây dựng năm 1750, tọa lạc trên cù lao An Bình. Công nhận Di tích lịch sử – văn hóa cấp quốc gia ngày 12/12/1994. Kiến trúc 3 gian với 96 cột gỗ tròn chạm trổ tinh xảo.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Dong_Khoi_monument_Ben_Tre.jpg/640px-Dong_Khoi_monument_Ben_Tre.jpg"
+           alt="Di tích Đồng Khởi Bến Tre" loading="lazy"
+           onerror="this.src='https://images.unsplash.com/photo-1563901935883-cb61f22e9ce9?w=600&h=350&fit=crop'">
+      <div class="card-body">
+        <span class="card-tag"><span class="badge badge-bt">Bến Tre cũ</span> Di tích lịch sử</span>
+        <h3>Di Tích Phong Trào Đồng Khởi</h3>
+        <p>Năm 1960, Bến Tre là nơi phát động phong trào "Đồng Khởi" nổi tiếng toàn miền Nam, gắn với tên tuổi Nữ tướng Nguyễn Thị Định – biểu tượng của ý chí phụ nữ Việt Nam anh hùng.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== TAB 3: VĂN HOÁ ============================== -->
+<section class="section" id="tab-van-hoa">
+  <div class="section-header">
+    <p class="section-eyebrow">Bản Sắc Văn Hoá</p>
+    <h2 class="section-title">Ba Sắc Màu <em>Phù Sa</em></h2>
+    <p class="section-desc">Tỉnh Vĩnh Long mới là sự giao thoa kỳ diệu giữa ba nền văn hóa: miệt vườn trù phú Vĩnh Long, xứ dừa Bến Tre và bản sắc Khmer đặc sắc Trà Vinh.</p>
+  </div>
+
+  <!-- Mosaic gallery -->
+  <div class="mosaic">
+    <div class="mosaic-item big">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Don_ca_tai_tu.jpg/800px-Don_ca_tai_tu.jpg"
+           alt="Đờn Ca Tài Tử" loading="lazy"
+           onerror="this.src='https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=450&fit=crop'">
+      <div class="mosaic-label">🎵 Đờn Ca Tài Tử Nam Bộ – Di sản UNESCO</div>
+    </div>
+    <div class="mosaic-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Khmer_festival.jpg/400px-Khmer_festival.jpg"
+           alt="Lễ hội Khmer" loading="lazy"
+           onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop'">
+      <div class="mosaic-label">🎊 Lễ hội Ok Om Bok (Trà Vinh)</div>
+    </div>
+    <div class="mosaic-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Coconut_candy_Ben_Tre.jpg/400px-Coconut_candy_Ben_Tre.jpg"
+           alt="Kẹo dừa Bến Tre" loading="lazy"
+           onerror="this.src='https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=300&fit=crop'">
+      <div class="mosaic-label">🥥 Nghề làm kẹo dừa Bến Tre</div>
+    </div>
+    <div class="mosaic-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Gom_Vinh_Long.jpg/400px-Gom_Vinh_Long.jpg"
+           alt="Làng nghề gốm Vĩnh Long" loading="lazy"
+           onerror="this.src='https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop'">
+      <div class="mosaic-label">🏺 Làng nghề gốm Mang Thít</div>
+    </div>
+    <div class="mosaic-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Ao_Ba_Om_Tra_Vinh.jpg/400px-Ao_Ba_Om_Tra_Vinh.jpg"
+           alt="Ao Bà Om" loading="lazy"
+           onerror="this.src='https://images.unsplash.com/photo-1591017403286-fd8493524e1e?w=400&h=300&fit=crop'">
+      <div class="mosaic-label">🌳 Ao Bà Om – Thắng cảnh Quốc gia</div>
+    </div>
+    <div class="mosaic-item big">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Mekong_Delta_boat.jpg/800px-Mekong_Delta_boat.jpg"
+           alt="Sông nước miền Tây" loading="lazy"
+           onerror="this.src='https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&h=450&fit=crop'">
+      <div class="mosaic-label">⛵ Văn hóa sông nước đặc trưng miền Tây</div>
+    </div>
+    <div class="mosaic-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Cai_Rang_floating_market.jpg/400px-Cai_Rang_floating_market.jpg"
+           alt="Chợ nổi Trà Ôn" loading="lazy"
+           onerror="this.src='https://images.unsplash.com/photo-1563901935883-cb61f22e9ce9?w=400&h=300&fit=crop'">
+      <div class="mosaic-label">🛶 Chợ nổi Trà Ôn</div>
+    </div>
+    <div class="mosaic-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Cai_luong_performance.jpg/400px-Cai_luong_performance.jpg"
+           alt="Cải lương" loading="lazy"
+           onerror="this.src='https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=400&h=300&fit=crop'">
+      <div class="mosaic-label">🎭 Nghệ thuật Cải lương Nam Bộ</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="quote-block">
+      <blockquote>"Vĩnh Long là vùng đất địa linh nhân kiệt, nơi hội tụ của sông nước hiền hòa, miệt vườn trù phú và ba nền văn hóa đặc sắc."</blockquote>
+      <cite>— Nhận định về tỉnh Vĩnh Long mới sau sáp nhập 2025</cite>
+    </div>
+  </div>
+
+  <div class="section-header" style="padding-top:2rem;">
+    <p class="section-eyebrow">Lễ Hội & Tập Quán</p>
+    <h2 class="section-title">Năm Tháng <em>Lễ Hội</em></h2>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <img class="card-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Ok_Om_Bok_festival.jpg/640px-Ok_Om_Bok_festival.jpg"
+           alt="Lễ hội Ok Om Bok" loading="lazy"
+           onerror="this.src='https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=600&h=350&fit=crop'">
+      <div class="card-body">
+        <span class="card-tag"><span class="badge badge-tv">Trà Vinh cũ</span> Di sản văn hóa phi vật thể Quốc gia</span>
+        <h3>Lễ Hội Ok Om Bok</h3>
+        <p>Lễ hội truyền thống lớn nhất của đồng bào Khmer, diễn ra vào rằm tháng 10 âm lịch. Người dân dâng cốm dẹp lên mặt trăng, cúng trăng, đua ghe ngo sôi động trên sông. Đây là lễ hội "Lễ Nguyên Tiêu ở Trà Cú" đã được công nhận Di sản văn hóa phi vật thể Quốc gia.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Don_ca_tai_tu_UNESCO.jpg/640px-Don_ca_tai_tu_UNESCO.jpg"
+           alt="Đờn ca Tài tử" loading="lazy"
+           onerror="this.src='https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=350&fit=crop'">
+      <div class="card-body">
+        <span class="card-tag"><span class="badge badge-vl">Toàn tỉnh</span> Di sản UNESCO</span>
+        <h3>Đờn Ca Tài Tử Nam Bộ</h3>
+        <p>Nghệ thuật âm nhạc thính phòng độc đáo, được UNESCO công nhận Di sản văn hóa phi vật thể đại diện nhân loại năm 2013. Vĩnh Long là một trong những cái nôi của nghệ thuật đờn ca tài tử với các nghệ sĩ nổi tiếng như NSND Út Trà Ôn.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Mekong_delta_fruit_garden.jpg/640px-Mekong_delta_fruit_garden.jpg"
+           alt="Vườn trái cây miệt vườn" loading="lazy"
+           onerror="this.src='https://images.unsplash.com/photo-1599707367072-cd6ada2bc375?w=600&h=350&fit=crop'">
+      <div class="card-body">
+        <span class="card-tag"><span class="badge badge-bt">Bến Tre cũ</span> Văn hóa truyền thống</span>
+        <h3>Văn Hóa Vườn Dừa & Miệt Vườn</h3>
+        <p>Bến Tre là "thủ phủ dừa" của cả nước với hơn 70.000 ha dừa. Văn hóa dừa thấm vào đời sống người dân: từ kẹo dừa, thủ công mỹ nghệ đến kiến trúc nhà ở, giao thương bằng ghe thuyền trên kênh rạch.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-strip">
+    🎨 Làng nghề nổi tiếng: <strong>Gốm Mang Thít</strong> (Vĩnh Long) · <strong>Kẹo dừa Bến Tre</strong> · <strong>Chiếu cói Trà Vinh</strong> · <strong>Bánh tráng Lục Sĩ</strong> · <strong>Nghề đan lát Chợ Lách</strong>
+  </div>
+</section>
+
+<!-- ============================== TAB 4: DU LỊCH ============================== -->
+<section class="section" id="tab-du-lich">
+  <div class="section-header">
+    <p class="section-eyebrow">Điểm Đến Hấp Dẫn</p>
+    <h2 class="section-title">Khám Phá <em>Vĩnh Long</em></h2>
+    <p class="section-desc">Từ những cù lao xanh mướt, chùa Khmer cổ kính đến bãi biển hoang sơ – Vĩnh Long mới hội tụ đủ loại hình du lịch đặc sắc.</p>
+  </div>
+
+  <div class="spots-layout">
+    <div class="spot tall">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Cu_Lao_An_Binh_Vinh_Long.jpg/640px-Cu_Lao_An_Binh_Vinh_Long.jpg"
+           alt="Cù Lao An Bình" loading="lazy"
+           onerror="this.src='https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=640&h=800&fit=crop'">
+      <div class="spot-info">
+        <div class="spot-icon">🏝️</div>
+        <h3>Cù Lao An Bình</h3>
+        <p>Đảo xanh giữa sông Cổ Chiên với vườn cây trái trĩu quả, nhà cổ Nam Bộ và không khí thanh bình. Điểm du lịch sinh thái nổi tiếng nhất Vĩnh Long.</p>
+      </div>
+    </div>
+    <div>
+      <div class="spot" style="height:209px;margin-bottom:4px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Con_Phung_Ben_Tre.jpg/640px-Con_Phung_Ben_Tre.jpg"
+             alt="Cồn Phụng Bến Tre" loading="lazy"
+             onerror="this.src='https://images.unsplash.com/photo-1599707367072-cd6ada2bc375?w=640&h=350&fit=crop'">
+        <div class="spot-info">
+          <div class="spot-icon">🥥</div>
+          <h3>Cồn Phụng – Bến Tre</h3>
+          <p>Ốc đảo xanh giữa sông Tiền, nổi tiếng với lò kẹo dừa thủ công và trò chơi dân gian.</p>
+        </div>
+      </div>
+      <div class="spot" style="height:209px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Ao_Ba_Om_Tra_Vinh.jpg/640px-Ao_Ba_Om_Tra_Vinh.jpg"
+             alt="Ao Bà Om Trà Vinh" loading="lazy"
+             onerror="this.src='https://images.unsplash.com/photo-1591017403286-fd8493524e1e?w=640&h=350&fit=crop'">
+        <div class="spot-info">
+          <div class="spot-icon">🌳</div>
+          <h3>Ao Bà Om – Trà Vinh</h3>
+          <p>Danh thắng Quốc gia với hàng trăm cây cổ thụ, gắn liền với truyền thuyết Khmer huyền bí.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-grid" style="margin-top:1.5rem;">
+    <div class="card">
+      <img class="card-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Tra_On_floating_market.jpg/640px-Tra_On_floating_market.jpg"
+           alt="Chợ nổi Trà Ôn" loading="lazy"
+           onerror="this.src='https://images.unsplash.com/photo-1563901935883-cb61f22e9ce9?w=600&h=350&fit=crop'">
+      <div class="card-body">
+        <span class="card-tag">🛶 Chợ Nổi Truyền Thống</span>
+        <h3>Chợ Nổi Trà Ôn</h3>
+        <p>Một trong những chợ nổi lâu đời còn hoạt động ở miền Tây. Dài hơn 300m, nhộn nhịp theo con nước với ghe thuyền đầy nông sản tươi – trải nghiệm văn hóa giao thương sông nước độc đáo.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Chua_Ang_Tra_Vinh.jpg/640px-Chua_Ang_Tra_Vinh.jpg"
+           alt="Chùa Âng Trà Vinh" loading="lazy"
+           onerror="this.src='https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=600&h=350&fit=crop'">
+      <div class="card-body">
+        <span class="card-tag">⛩️ Di tích Quốc gia</span>
+        <h3>Chùa Âng (Angkorajaborey)</h3>
+        <p>Ngôi chùa Khmer cổ nhất Trà Vinh, có tuổi đời hơn 900 năm. Kiến trúc Khmer đặc trưng với hoa văn tinh xảo, tọa lạc ngay cạnh Ao Bà Om. Đây là trung tâm tôn giáo và văn hóa của đồng bào Khmer Nam Bộ.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Ba_Dong_beach_Tra_Vinh.jpg/640px-Ba_Dong_beach_Tra_Vinh.jpg"
+           alt="Biển Ba Động" loading="lazy"
+           onerror="this.src='https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=350&fit=crop'">
+      <div class="card-body">
+        <span class="card-tag">🏖️ Bãi Biển Hoang Sơ</span>
+        <h3>Biển Ba Động – Trà Vinh</h3>
+        <p>Bãi biển hoang sơ yên bình với bãi cát mịn và hàng phi lao xanh mát. Không ồn ào nhưng mang vẻ đẹp nguyên sơ đặc trưng của vùng đất phù sa. Điểm đến lý tưởng cho du lịch nghỉ dưỡng tĩnh lặng.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Lang_gom_Mang_Thit.jpg/640px-Lang_gom_Mang_Thit.jpg"
+           alt="Làng gốm Mang Thít" loading="lazy"
+           onerror="this.src='https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=350&fit=crop'">
+      <div class="card-body">
+        <span class="card-tag">🏺 Làng Nghề Truyền Thống</span>
+        <h3>Làng Gốm Mang Thít</h3>
+        <p>Vĩnh Long nổi tiếng với nghề gốm và gạch ngói truyền thống. "Vương quốc đỏ" Mang Thít với hàng trăm lò gạch nung rực lửa tạo nên bức tranh ấn tượng. Du khách có thể trải nghiệm làm gốm thủ công.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Vuon_Cai_Mon_Ben_Tre.jpg/640px-Vuon_Cai_Mon_Ben_Tre.jpg"
+           alt="Vườn Cái Mơn Bến Tre" loading="lazy"
+           onerror="this.src='https://images.unsplash.com/photo-1623227866882-1c78e7892528?w=600&h=350&fit=crop'">
+      <div class="card-body">
+        <span class="card-tag">🍊 Du lịch Sinh Thái</span>
+        <h3>Vườn Trái Cây Cái Mơn</h3>
+        <p>Thuộc huyện Chợ Lách (Bến Tre cũ), nơi du khách thỏa sức hái và thưởng thức trái cây đặc sản theo mùa: sầu riêng, chôm chôm, măng cụt ngay tại vườn với giá trực tiếp nhà vườn.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Bao_tang_Vinh_Long.jpg/640px-Bao_tang_Vinh_Long.jpg"
+           alt="Bảo tàng Vĩnh Long" loading="lazy"
+           onerror="this.src='https://images.unsplash.com/photo-1557750255-c76072a7aad1?w=600&h=350&fit=crop'">
+      <div class="card-body">
+        <span class="card-tag">🏛️ Bảo Tàng</span>
+        <h3>Bảo Tàng Tỉnh Vĩnh Long</h3>
+        <p>Tọa lạc trung tâm TP. Vĩnh Long, trước mặt là bến tàu sông Cổ Chiên. Khuôn viên có nhiều cây cổ thụ được công nhận "Cây di tích lịch sử văn hóa Việt Nam", là nơi lưu giữ lịch sử toàn vùng.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== TAB 5: ẨM THỰC ============================== -->
+<section class="section" id="tab-am-thuc">
+  <div class="section-header">
+    <p class="section-eyebrow">Đặc Sản Vùng Đất</p>
+    <h2 class="section-title">Hương Vị <em>Phù Sa</em></h2>
+    <p class="section-desc">Ẩm thực Vĩnh Long mới là sự kết hợp tuyệt vời từ ba vùng đất: vị ngọt của trái cây miệt vườn, thơm béo của dừa Bến Tre và đậm đà bản sắc Khmer Trà Vinh.</p>
+  </div>
+
+  <div class="food-grid">
+    <div class="food-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Bun_nuoc_leo_Tra_Vinh.jpg/500px-Bun_nuoc_leo_Tra_Vinh.jpg"
+           alt="Bún nước lèo Trà Vinh" loading="lazy"
+           onerror="this.src='https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=500&h=350&fit=crop'">
+      <div class="food-card-body">
+        <span class="food-origin"><span class="badge badge-tv">Trà Vinh</span></span>
+        <h3>Bún Nước Lèo Trà Vinh</h3>
+        <p>Đặc sản nổi tiếng với nước lèo đậm đà từ mắm bò hóc, cá lóc tươi và sả. Hương vị đặc trưng của người Khmer Nam Bộ, thơm ngon khó quên.</p>
+      </div>
+    </div>
+    <div class="food-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Keo_dua_Ben_Tre.jpg/500px-Keo_dua_Ben_Tre.jpg"
+           alt="Kẹo dừa Bến Tre" loading="lazy"
+           onerror="this.src='https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=500&h=350&fit=crop'">
+      <div class="food-card-body">
+        <span class="food-origin"><span class="badge badge-bt">Bến Tre</span></span>
+        <h3>Kẹo Dừa Bến Tre</h3>
+        <p>Đặc sản nổi tiếng toàn quốc và xuất khẩu quốc tế. Kẹo dừa truyền thống làm từ cơm dừa, đường mạch nha, sữa dừa với nhiều hương vị: sầu riêng, pandan, socola.</p>
+      </div>
+    </div>
+    <div class="food-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Hu_tieu_Vinh_Long.jpg/500px-Hu_tieu_Vinh_Long.jpg"
+           alt="Hủ tiếu Vĩnh Long" loading="lazy"
+           onerror="this.src='https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=500&h=350&fit=crop'">
+      <div class="food-card-body">
+        <span class="food-origin"><span class="badge badge-vl">Vĩnh Long</span></span>
+        <h3>Hủ Tiếu Vĩnh Long</h3>
+        <p>Hủ tiếu sản xuất thủ công làng nghề truyền thống, sợi mềm dai đặc trưng. Ăn kèm thịt heo, tôm, gan, giá sống và rau thơm theo kiểu Nam Bộ.</p>
+      </div>
+    </div>
+    <div class="food-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Thanh_tra_Vinh_Long.jpg/500px-Thanh_tra_Vinh_Long.jpg"
+           alt="Thanh trà Vĩnh Long" loading="lazy"
+           onerror="this.src='https://images.unsplash.com/photo-1623227866882-1c78e7892528?w=500&h=350&fit=crop'">
+      <div class="food-card-body">
+        <span class="food-origin"><span class="badge badge-vl">Vĩnh Long</span></span>
+        <h3>Thanh Trà Vĩnh Long</h3>
+        <p>Trái cây đặc sản chỉ có ở Vĩnh Long, vỏ vàng tròn như chanh với hai loại chua và ngọt. Thường ăn tươi hoặc làm nước ép giải khát mùa hè.</p>
+      </div>
+    </div>
+    <div class="food-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Banh_trang_nem_Vinh_Long.jpg/500px-Banh_trang_nem_Vinh_Long.jpg"
+           alt="Bánh tráng nem Vĩnh Long" loading="lazy"
+           onerror="this.src='https://images.unsplash.com/photo-1563245372-f21724e3856d?w=500&h=350&fit=crop'">
+      <div class="food-card-body">
+        <span class="food-origin"><span class="badge badge-vl">Vĩnh Long</span></span>
+        <h3>Bánh Tráng Cù Lao Mây</h3>
+        <p>Làng nghề hơn 70 năm tại cù lao Lục Sĩ, chuyên bánh tráng nem mỏng, mềm dẻo. Không phụ gia, phơi nắng tự nhiên, xuất khẩu sang nhiều nước.</p>
+      </div>
+    </div>
+    <div class="food-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Chao_long_Tra_Vinh.jpg/500px-Chao_long_Tra_Vinh.jpg"
+           alt="Cháo lòng Trà Vinh" loading="lazy"
+           onerror="this.src='https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=500&h=350&fit=crop'">
+      <div class="food-card-body">
+        <span class="food-origin"><span class="badge badge-tv">Trà Vinh</span></span>
+        <h3>Cháo Lòng Trà Vinh</h3>
+        <p>Nổi tiếng về độ tươi ngon và cách chế biến đặc biệt với lòng heo sạch, ăn kèm bánh quẩy và gừng thái sợi. Món ăn sáng quen thuộc của người dân địa phương.</p>
+      </div>
+    </div>
+    <div class="food-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Sam_bo_luong.jpg/500px-Sam_bo_luong.jpg"
+           alt="Trái cây miệt vườn" loading="lazy"
+           onerror="this.src='https://images.unsplash.com/photo-1619566636858-adf3ef46400b?w=500&h=350&fit=crop'">
+      <div class="food-card-body">
+        <span class="food-origin"><span class="badge badge-bt">Bến Tre</span></span>
+        <h3>Trái Cây Vườn Chợ Lách</h3>
+        <p>Chôm chôm, sầu riêng, măng cụt, bưởi da xanh, sapôchê đặc sản vùng vườn Chợ Lách. Thưởng thức tươi tại vườn với giá cả thân thiện theo mùa thu hoạch.</p>
+      </div>
+    </div>
+    <div class="food-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Nuoc_dua_Ben_Tre.jpg/500px-Nuoc_dua_Ben_Tre.jpg"
+           alt="Nước dừa Bến Tre" loading="lazy"
+           onerror="this.src='https://images.unsplash.com/photo-1546171753-97d7676e4602?w=500&h=350&fit=crop'">
+      <div class="food-card-body">
+        <span class="food-origin"><span class="badge badge-bt">Bến Tre</span></span>
+        <h3>Các Sản Phẩm Từ Dừa</h3>
+        <p>Nước dừa tươi, thạch dừa, dầu dừa, kẹo dừa, thủ công mỹ nghệ từ gáo dừa và thân dừa. Bến Tre là "vương quốc dừa" với đa dạng sản phẩm từ cây dừa xuất khẩu toàn cầu.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== TAB 6: HÀNH CHÍNH ============================== -->
+<section class="section" id="tab-hanh-chinh">
+  <div class="section-header">
+    <p class="section-eyebrow">Tổ Chức Hành Chính</p>
+    <h2 class="section-title">Cấu Trúc <em>Mới 2025</em></h2>
+    <p class="section-desc">Theo Nghị quyết 1687/NQ-UBTVQH15, tỉnh Vĩnh Long mới tổ chức hai cấp: tỉnh – xã/phường, bỏ cấp huyện. Toàn tỉnh có 124 đơn vị hành chính cấp xã.</p>
+  </div>
+
+  <div class="facts-bar">
+    <div class="fact-item">
+      <span class="fact-num">124</span>
+      <span class="fact-lbl">Đơn vị hành chính cấp xã</span>
+    </div>
+    <div class="fact-item">
+      <span class="fact-num">105</span>
+      <span class="fact-lbl">Xã</span>
+    </div>
+    <div class="fact-item">
+      <span class="fact-num">19</span>
+      <span class="fact-lbl">Phường</span>
+    </div>
+    <div class="fact-item">
+      <span class="fact-num">4</span>
+      <span class="fact-lbl">Xã giữ nguyên (không sắp xếp)</span>
+    </div>
+    <div class="fact-item">
+      <span class="fact-num">230 → 124</span>
+      <span class="fact-lbl">Giảm từ 230 đơn vị cũ</span>
+    </div>
+  </div>
+
+  <div class="info-box" style="margin-top:2rem;">
+    <h3>Mô Hình Quản Lý Hai Cấp</h3>
+    <p>Đây là thay đổi mang tính đột phá: cấp huyện bị xóa bỏ, thay bằng mô hình quản lý trực tiếp từ tỉnh xuống xã/phường. Giúp tinh gọn bộ máy, tăng hiệu quả phục vụ nhân dân và tập trung nguồn lực đầu tư hạ tầng đồng bộ cho toàn tỉnh.</p>
+  </div>
+
+  <div class="section-header" style="padding-top:2rem;">
+    <p class="section-eyebrow">4 Xã Không Sắp Xếp</p>
+    <h2 class="section-title">Xã <em>Giữ Nguyên</em></h2>
+  </div>
+
+  <div class="admin-table-wrap">
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Tên Xã</th>
+          <th>Thuộc (cũ)</th>
+          <th>Ghi chú</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td><strong>Xã Long Hòa</strong></td>
+          <td>Huyện Châu Thành (Trà Vinh cũ)</td>
+          <td>Giữ nguyên theo NQ 1687</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><strong>Xã Đông Hải</strong></td>
+          <td>Duyên hải Trà Vinh cũ</td>
+          <td>Xã ven biển, giữ nguyên</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><strong>Xã Long Vĩnh</strong></td>
+          <td>Duyên hải Trà Vinh cũ</td>
+          <td>Xã ven biển, giữ nguyên</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><strong>Xã Hòa Minh</strong></td>
+          <td>Duyên hải Trà Vinh cũ</td>
+          <td>Xã ven biển, giữ nguyên</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-header" style="padding-top:1rem;">
+    <p class="section-eyebrow">Phân Bổ Hành Chính</p>
+    <h2 class="section-title">Vùng <em>Địa Lý</em></h2>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-body">
+        <span class="card-tag"><span class="badge badge-vl">Khu vực Vĩnh Long cũ</span></span>
+        <h3>Trung Tâm Hành Chính</h3>
+        <p>TP. Vĩnh Long là trung tâm hành chính – chính trị toàn tỉnh. Khu vực này bao gồm các đơn vị từ Vĩnh Long cũ với 28 đơn vị hành chính cấp xã mới sau sáp nhập.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <span class="card-tag"><span class="badge badge-bt">Khu vực Bến Tre cũ</span></span>
+        <h3>Vùng Miệt Vườn & Cù Lao</h3>
+        <p>Khu vực Bến Tre cũ có 48 đơn vị hành chính cấp xã mới (từ 148 đơn vị cũ), bao gồm 43 xã và 5 phường, tập trung ở vùng cù lao và đồng bằng ven sông Tiền.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <span class="card-tag"><span class="badge badge-tv">Khu vực Trà Vinh cũ</span></span>
+        <h3>Vùng Ven Biển & Khmer</h3>
+        <p>Khu vực Trà Vinh cũ nằm phía đông, tiếp giáp Biển Đông với tiềm năng kinh tế biển lớn. Trung tâm văn hóa Khmer Nam Bộ với đông đảo cộng đồng người Khmer sinh sống.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-strip">
+    📋 Thủ tục hành chính: Giấy tờ cũ <strong>vẫn còn giá trị</strong> · Khi làm mới ghi theo tên đơn vị hành chính mới · Biển số xe, GPLX <strong>không bắt buộc đổi</strong>
+  </div>
+</section>
+
+<!-- ============================== TAB 7: KINH TẾ ============================== -->
+<section class="section" id="tab-kinh-te">
+  <div class="section-header">
+    <p class="section-eyebrow">Phát Triển Kinh Tế</p>
+    <h2 class="section-title">Tiềm Lực <em>Mới</em></h2>
+    <p class="section-desc">Hợp nhất ba tỉnh tạo ra thực thể kinh tế mạnh mẽ, khai thác tối đa thế mạnh bổ trợ lẫn nhau: nông nghiệp – thủy sản – năng lượng – du lịch.</p>
+  </div>
+
+  <div class="facts-bar">
+    <div class="fact-item">
+      <span class="fact-num">10,04%</span>
+      <span class="fact-lbl">Tăng trưởng GRDP 2024 (Trà Vinh)</span>
+    </div>
+    <div class="fact-item">
+      <span class="fact-num">70.000+ ha</span>
+      <span class="fact-lbl">Diện tích dừa (Bến Tre)</span>
+    </div>
+    <div class="fact-item">
+      <span class="fact-num">50.000 ha</span>
+      <span class="fact-lbl">Quy hoạch khu lấn biển</span>
+    </div>
+    <div class="fact-item">
+      <span class="fact-num">1.000+ MW</span>
+      <span class="fact-lbl">Công suất nhiệt điện Duyên Hải</span>
+    </div>
+  </div>
+
+  <div class="card-grid" style="margin-top:2rem;">
+    <div class="card">
+      <img class="card-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Rice_farming_Mekong_delta.jpg/640px-Rice_farming_Mekong_delta.jpg"
+           alt="Nông nghiệp ĐBSCL" loading="lazy"
+           onerror="this.src='https://images.unsplash.com/photo-1535073045059-e9a0b91de90a?w=600&h=350&fit=crop'">
+      <div class="card-body">
+        <span class="card-tag">🌾 Trụ Cột Kinh Tế</span>
+        <h3>Nông Nghiệp & Thủy Sản</h3>
+        <p>Vĩnh Long mới là trung tâm sản xuất, xuất khẩu lúa gạo, thủy sản và cây ăn quả của ĐBSCL. Đất phù sa màu mỡ, hệ thống thủy lợi hoàn thiện tạo nền tảng cho nông nghiệp hàng hóa quy mô lớn.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Wind_turbine_Tra_Vinh.jpg/640px-Wind_turbine_Tra_Vinh.jpg"
+           alt="Điện gió Trà Vinh" loading="lazy"
+           onerror="this.src='https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=600&h=350&fit=crop'">
+      <div class="card-body">
+        <span class="card-tag">⚡ Năng Lượng Tái Tạo</span>
+        <h3>Trung Tâm Năng Lượng</h3>
+        <p>Khu vực Trà Vinh cũ là trung tâm năng lượng mới nổi của ĐBSCL với hàng loạt dự án điện gió, điện mặt trời quy mô lớn và cụm nhà máy nhiệt điện Duyên Hải công suất hàng nghìn MW.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Coconut_processing_Ben_Tre.jpg/640px-Coconut_processing_Ben_Tre.jpg"
+           alt="Chế biến dừa Bến Tre" loading="lazy"
+           onerror="this.src='https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=600&h=350&fit=crop'">
+      <div class="card-body">
+        <span class="card-tag">🥥 Công Nghiệp Chế Biến</span>
+        <h3>Công Nghiệp Dừa & Nông Sản</h3>
+        <p>Bến Tre là thủ phủ dừa Việt Nam với toàn bộ chuỗi giá trị từ trồng trọt, thu hoạch đến chế biến và xuất khẩu. Kẹo dừa, dầu dừa, thủ công mỹ nghệ dừa xuất khẩu sang hơn 90 quốc gia.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Mekong_delta_tourism.jpg/640px-Mekong_delta_tourism.jpg"
+           alt="Du lịch sinh thái" loading="lazy"
+           onerror="this.src='https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=600&h=350&fit=crop'">
+      <div class="card-body">
+        <span class="card-tag">🌿 Kinh Tế Du Lịch</span>
+        <h3>Du Lịch Sinh Thái & Văn Hoá</h3>
+        <p>Sáp nhập mở ra tiềm năng du lịch khổng lồ: từ du lịch miệt vườn, sông nước đến du lịch văn hóa Khmer và nghỉ dưỡng ven biển Ba Động. Là điểm đến hấp dẫn bậc nhất ĐBSCL.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Ben_Tre_sea_reclamation.jpg/640px-Ben_Tre_sea_reclamation.jpg"
+           alt="Khu lấn biển Bến Tre" loading="lazy"
+           onerror="this.src='https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&h=350&fit=crop'">
+      <div class="card-body">
+        <span class="card-tag">🌊 Kinh Tế Biển</span>
+        <h3>Phát Triển Kinh Tế Biển</h3>
+        <p>Tầm nhìn chiến lược phát triển khu lấn biển ~50.000 ha ở vùng Bến Tre cũ, mở rộng không gian phát triển ra phía Biển Đông. Nuôi trồng thủy sản ven biển, cảng biển và dịch vụ hàng hải.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Vinh_Long_bridge.jpg/640px-Vinh_Long_bridge.jpg"
+           alt="Hạ tầng giao thông Vĩnh Long" loading="lazy"
+           onerror="this.src='https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&h=350&fit=crop'">
+      <div class="card-body">
+        <span class="card-tag">🛣️ Hạ Tầng</span>
+        <h3>Đầu Tư Hạ Tầng Chiến Lược</h3>
+        <p>Sáp nhập cho phép tập trung nguồn lực đầu tư hạ tầng: cao tốc, cầu vượt sông, cảng biển, khu công nghiệp. Kết nối liên thông giữa ba vùng đất, thúc đẩy lưu thông hàng hóa và thu hút đầu tư.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <h3>Tầm Nhìn Phát Triển 2025–2030</h3>
+    <p>Tỉnh Vĩnh Long mới hướng tới trở thành cực tăng trưởng quan trọng của ĐBSCL, phát huy tối đa ba thế mạnh: (1) Nông nghiệp công nghệ cao và chế biến nông sản xuất khẩu; (2) Trung tâm năng lượng tái tạo quốc gia; (3) Điểm du lịch văn hóa – sinh thái đặc sắc. Liên kết kinh tế chặt chẽ với TP.HCM, Cần Thơ và hội nhập quốc tế sâu rộng.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>Tỉnh Vĩnh Long</strong> – Hợp nhất từ Bến Tre, Trà Vinh và Vĩnh Long (01/07/2025)</p>
+  <p style="margin-top:0.5rem;">Theo Nghị quyết 202/2025/QH15 và Nghị quyết 1687/NQ-UBTVQH15</p>
+  <p style="margin-top:0.5rem; color:rgba(255,255,255,0.3);">Website thông tin lịch sử & văn hóa · Dữ liệu cập nhật đến 2026</p>
+</footer>
+
+<!-- CHATBOX FAB -->
+<button id="chatbox-fab" onclick="toggleChat()" title="Hỏi đáp về Vĩnh Long">
+  <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+</button>
+
+<!-- CHATBOX PANEL -->
+<div id="chatbox-panel">
+  <div class="chat-header">
+    <div class="chat-avatar">🌿</div>
+    <div class="chat-header-info">
+      <h4>Hỏi Đáp Vĩnh Long</h4>
+      <p>Trả lời tức thì về tỉnh Vĩnh Long</p>
+    </div>
+  </div>
+  <div id="chat-messages">
+    <div class="msg bot">Xin chào! Tôi có thể giúp bạn tìm hiểu về tỉnh Vĩnh Long mới sau sáp nhập 2025. Hãy hỏi tôi về lịch sử, văn hóa, du lịch, ẩm thực hoặc hành chính của tỉnh nhé! 🌿</div>
+  </div>
+  <div class="chat-input-row">
+    <input type="text" id="chat-input" placeholder="Nhập câu hỏi..." onkeydown="if(event.key==='Enter')sendChat()">
+    <button id="chat-send" onclick="sendChat()">➤</button>
+  </div>
+</div>
+
+<script>
+// ===== TAB NAVIGATION =====
+function showTab(id, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({ top: document.getElementById('mainNav').offsetTop - 10, behavior: 'smooth' });
+}
+
+// ===== CHATBOX =====
+function toggleChat() {
+  const panel = document.getElementById('chatbox-panel');
+  panel.classList.toggle('open');
+}
+
+const KB = {
+  "vĩnh long mới": "Tỉnh Vĩnh Long mới được thành lập từ ngày 01/07/2025 theo Nghị quyết 202/2025/QH15, hợp nhất ba tỉnh Bến Tre, Trà Vinh và Vĩnh Long cũ. Diện tích 6.296,2 km², dân số ~4,26 triệu người, 124 đơn vị hành chính cấp xã. Trung tâm hành chính đặt tại TP. Vĩnh Long.",
+  "sáp nhập": "Tỉnh Vĩnh Long sáp nhập từ ngày 01/07/2025, hợp nhất Bến Tre + Trà Vinh + Vĩnh Long (cũ) theo Nghị quyết 202/2025/QH15. Đây là bước ngoặt lịch sử tạo ra cực tăng trưởng mới cho ĐBSCL.",
+  "diện tích": "Tỉnh Vĩnh Long mới có diện tích 6.296,2 km², đạt 125,92% so với tiêu chuẩn quy định.",
+  "dân số": "Tỉnh Vĩnh Long mới có dân số khoảng 4.257.581 người (2025), bao gồm người Kinh, Khmer (~30% khu vực Trà Vinh), người Hoa và các dân tộc khác.",
+  "hành chính": "Tỉnh Vĩnh Long mới có 124 đơn vị hành chính cấp xã: 105 xã và 19 phường. Cấp huyện bị xóa bỏ, thay bằng mô hình 2 cấp: tỉnh – xã/phường. 4 xã giữ nguyên: Long Hòa, Đông Hải, Long Vĩnh, Hòa Minh.",
+  "du lịch": "Điểm du lịch nổi bật: Cù lao An Bình (Vĩnh Long), Cồn Phụng (Bến Tre), Ao Bà Om & Chùa Âng (Trà Vinh), Biển Ba Động, Chợ nổi Trà Ôn, Làng gốm Mang Thít, Vườn trái cây Cái Mơn, Bảo tàng Vĩnh Long.",
+  "ẩm thực": "Đặc sản nổi tiếng: Kẹo dừa Bến Tre, Bún nước lèo Trà Vinh, Hủ tiếu Vĩnh Long, Thanh trà Vĩnh Long, Bánh tráng cù lao Mây, Cháo lòng Trà Vinh, Trái cây Chợ Lách. Mỗi vùng có hương vị đặc trưng riêng.",
+  "lịch sử": "Vĩnh Long có lịch sử ~300 năm khai phá (từ thế kỷ XVII). Thành lập tỉnh năm 1832 dưới thời vua Minh Mạng. Là một trong 'Lục tỉnh Nam Kỳ'. Nổi tiếng với phong trào kháng chiến và danh nhân: Phan Thanh Giản, Nguyễn Thị Định, Út Trà Ôn.",
+  "văn hóa": "Văn hóa Vĩnh Long mới là sự hòa quyện ba nền văn hóa: Vĩnh Long (miệt vườn, hiếu học, đờn ca tài tử), Bến Tre (văn hóa dừa, Đồng Khởi), Trà Vinh (Khmer, lễ hội Ok Om Bok, chùa tháp). Đờn ca tài tử là Di sản UNESCO.",
+  "bến tre": "Bến Tre (nay thuộc Vĩnh Long mới) là 'thủ phủ dừa' Việt Nam với 70.000+ ha dừa. Nổi tiếng với phong trào Đồng Khởi 1960, nữ tướng Nguyễn Thị Định. Điểm du lịch: Cồn Phụng, Cồn Quy, làng kẹo dừa, vườn Cái Mơn.",
+  "trà vinh": "Trà Vinh (nay thuộc Vĩnh Long mới) nổi tiếng với văn hóa Khmer (~30% dân số), hàng trăm chùa tháp Khmer. Trung tâm năng lượng: nhiệt điện Duyên Hải, điện gió, điện mặt trời. Biển Ba Động hoang sơ đẹp.",
+  "kinh tế": "Kinh tế Vĩnh Long mới có 4 trụ cột: Nông nghiệp – thủy sản xuất khẩu, Công nghiệp chế biến dừa, Năng lượng tái tạo (Trà Vinh), Du lịch sinh thái – văn hóa. GRDP 2024 Trà Vinh tăng 10,04%, cao nhất ĐBSCL.",
+  "giao thông": "Vĩnh Long cách TP.HCM ~100km, cách Cần Thơ ~30km. Có nhiều tuyến xe khách từ bến xe Miền Tây (giá 180k–280k). Hệ thống cao tốc, quốc lộ và nhiều cầu lớn kết nối các vùng.",
+  "đờn ca tài tử": "Đờn ca tài tử Nam Bộ là nghệ thuật âm nhạc truyền thống, được UNESCO công nhận Di sản văn hóa phi vật thể nhân loại năm 2013. Vĩnh Long là cái nôi với nhiều nghệ sĩ nổi tiếng: NSND Út Trà Ôn, NSƯT Lệ Thủy.",
+  "ao bà om": "Ao Bà Om là Danh thắng Quốc gia nằm ở Trà Vinh (nay thuộc Vĩnh Long). Hồ hình chữ nhật với hàng trăm cây cổ thụ, gắn liền với truyền thuyết Khmer. Cạnh đó là Chùa Âng cổ nhất Trà Vinh, hơn 900 năm tuổi.",
+  "chùa tiên châu": "Chùa Tiên Châu xây dựng năm 1750, ngôi chùa cổ nhất Vĩnh Long, tọa lạc cù lao An Bình. Được công nhận Di tích lịch sử – văn hóa cấp quốc gia ngày 12/12/1994. Kiến trúc 3 gian với 96 cột gỗ tròn chạm trổ tinh xảo.",
+  "văn thánh miếu": "Văn Thánh Miếu Vĩnh Long xây thời Nguyễn, là văn miếu thứ 2 ở Nam Bộ. Được công nhận Di tích lịch sử – văn hóa năm 1991. Biểu tượng truyền thống hiếu học của đất Vĩnh Long."
+};
+
+function findAnswer(q) {
+  q = q.toLowerCase().normalize('NFC');
+  for (const [key, val] of Object.entries(KB)) {
+    const k = key.toLowerCase().normalize('NFC');
+    if (q.includes(k) || k.split(' ').every(w => q.includes(w))) {
+      return val;
+    }
+  }
+  // Keyword fallback
+  if (q.includes('dừa') || q.includes('dua')) return KB['bến tre'];
+  if (q.includes('khmer') || q.includes('chùa')) return KB['trà vinh'];
+  if (q.includes('ăn') || q.includes('món') || q.includes('đặc sản')) return KB['ẩm thực'];
+  if (q.includes('thăm') || q.includes('tham quan') || q.includes('đi') || q.includes('điểm')) return KB['du lịch'];
+  if (q.includes('xã') || q.includes('phường') || q.includes('huyện')) return KB['hành chính'];
+  if (q.includes('kinh') || q.includes('gdp') || q.includes('phát triển')) return KB['kinh tế'];
+  return "Tôi chưa có thông tin chi tiết về câu hỏi này. Bạn có thể hỏi về: lịch sử, văn hóa, du lịch, ẩm thực, hành chính, kinh tế, hoặc các địa danh nổi bật của tỉnh Vĩnh Long mới. 😊";
+}
+
+function sendChat() {
+  const input = document.getElementById('chat-input');
+  const msgs = document.getElementById('chat-messages');
+  const q = input.value.trim();
+  if (!q) return;
+
+  // User message
+  const uMsg = document.createElement('div');
+  uMsg.className = 'msg user';
+  uMsg.textContent = q;
+  msgs.appendChild(uMsg);
+  input.value = '';
+  msgs.scrollTop = msgs.scrollHeight;
+
+  // Typing indicator
+  const typing = document.createElement('div');
+  typing.className = 'msg bot';
+  typing.innerHTML = '<div class="typing-dots"><span></span><span></span><span></span></div>';
+  msgs.appendChild(typing);
+  msgs.scrollTop = msgs.scrollHeight;
+
+  setTimeout(() => {
+    typing.remove();
+    const ans = findAnswer(q);
+    const bMsg = document.createElement('div');
+    bMsg.className = 'msg bot';
+    bMsg.textContent = ans;
+    msgs.appendChild(bMsg);
+    msgs.scrollTop = msgs.scrollHeight;
+  }, 900 + Math.random() * 400);
+}
+</script>
+</body>
+</html>
